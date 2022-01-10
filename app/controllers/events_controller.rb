@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
     def create
         @event= current_user.events.build(event_params)
+        
 
         respond_to do |format|
             if @event.save
