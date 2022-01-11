@@ -1,17 +1,30 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="mainGrid">
 
-    <% @events.each do |event| %>
-      <a href="<%=event_path(event)%>">
+  <h2 class="UpcomingEventsHeader center">Upcoming Events</h2>
+  <h2 class="PastEventsHeader center">Past Events</h2>
+
+  <div class="upEventItem">
+    <% @events.upcoming.each do |event| %>
+      <a href="<%=event_path(event)%>" class="eventItem">
       <div>
         <%= event.title %>
-        <%= event.body %>
+        <br>
         <%= event.date %>
       </div>
       </a>
     <% end %>
+  </div>
 
-    <%= link_to "Show user", user_path(current_user), method: :get%>
-
-<br>
+  <div class="pastEventItem">
+    <% @events.past.reverse.each do |event| %>
+      <a href="<%=event_path(event)%>" class="eventItemP">
+      <div>
+        <%= event.title %>
+        <br>
+        <%= event.date %>
+      </div>
+      </a>
+    <% end %>
+  </div>
+</div>

@@ -6,50 +6,61 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-     
-
-
-
-  <nav class="navbar is-info">
-  <div class="navbar-brand">
-    <%= link_to root_path, class: "navbar-item" do %>
-      <h1 class="title is-5">Events</h1>
-    <% end %>
-  </div>
-
-  <div id="navbarExample" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="field is-grouped">
-          <p class="control">
-            <%= link_to "New Event", new_event_path, class: "button is-info is-inverted" %> 
-          </p>
-          <% if user_signed_in? %>
-            <p class="control">
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-info" %>
-            </p>
-          <%else%>
-            <p class="control">
-              <%= link_to "Sign in", new_user_session_path, class: "button is-info" %>
-            </p>
-            <p class="control">
-              <%= link_to "Sign up", new_user_registration_path, class: "button is-info" %>
-            </p>
+    <nav>
+        <div class="logo">
+          <%= link_to root_path, class: "navbar-item" do %>
+            <span class="logoLetter">E</span>
+            <span>ventoo</span>
           <% end %>
         </div>
-      </div>
-  </div>
-</nav>
 
+        <div class="links">
+          <ul>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to "New Event", new_event_path %> 
+              </li>
+              <li>
+                <%= link_to "Show user", user_path(current_user), method: :get%>
+              </li>
+              <li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-info" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Sign in", new_user_session_path%>
+              </li>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path%>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    </nav>        
 
+    <div class="main">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    
 
-
-    <%= yield %>
+    <footer>
+      &copy; berryStraw <br>
+      github: <a href="https://github.com/berryStraaw">berryStraaw</a>
+    </footer>
+  
   </body>
 </html>

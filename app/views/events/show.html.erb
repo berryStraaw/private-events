@@ -4,7 +4,9 @@
 <%= @event.body %>
 <%= @event.date %>
 
+<% if user_signed_in? %>
 <%= link_to "Update", enrollment_path, method: :put%>
+<% end %>
 
 <% @event.attendees.each do |user| %>
     <%=user.id %>

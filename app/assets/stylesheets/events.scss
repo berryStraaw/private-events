@@ -1,3 +1,59 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.mainGrid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header PastHeader" "events PastEvents" ;
+    row-gap: 2rem;
+}
+
+
+.center{
+    text-align: center;
+}
+.UpcomingEventsHeader{
+    grid-area: header;
+    color:#E18335;
+}
+
+.PastEventsHeader{
+    grid-area: PastHeader;
+    color:#E18335;
+}
+
+.upEventItem{
+    grid-area: events;
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap:5rem;
+}
+
+.pastEventItem{
+    grid-area: PastEvents;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5rem;
+    
+}
+
+.eventItem{
+    width: 300px;
+    height: 5rem;
+    background-color: #424874;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 2px 5px #888888;
+}
+
+.eventItemP{
+    width: 250px;
+    height: 5rem;
+    background-color: #424874;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 1rem;
+}
