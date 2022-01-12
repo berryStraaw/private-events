@@ -16,7 +16,7 @@
 
  body{
     font-family: 'Balsamiq Sans', cursive, sans-serif;
-    color: #E18335  ;
+    color: #FFFD82  ;
     background-color: #D8F6FD;
     font-size: 24px;
     min-height: 100%;
@@ -77,4 +77,47 @@ footer{
 
 .main{
     margin: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+h2{
+    text-align: center;
+    font-size: 36px;
+}
+
+.outText{
+    color:#E18335;
+    margin-bottom: 1rem;
+}
+
+.signupContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.signupBox{
+    background-color: #07A0C3;
+    color: #FFFD82;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.signupBtn{
+    background-color: rgb(7, 160, 195);
+    color: rgb(255, 253, 130);
+    border:1px solid white;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+#error_explanation{
+    color: red;
+}
+
+.field{
+    margin-bottom: 1rem;
 }

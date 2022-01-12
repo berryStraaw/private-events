@@ -42,18 +42,73 @@
 .eventItem{
     width: 300px;
     height: 5rem;
-    background-color: #424874;
+    background-color: #07A0C3;
     text-align: center;
     line-height: 2.5rem;
     border-radius: 1rem;
-    box-shadow: 2px 5px #888888;
+    box-shadow: 1px 1px #888888;
 }
 
 .eventItemP{
     width: 250px;
     height: 5rem;
-    background-color: #424874;
+    background-color: #07A0C3;
     text-align: center;
     line-height: 2.5rem;
     border-radius: 1rem;
+    box-shadow: 1px 1px #888888;
+}
+
+.show{
+    color:#18314F;
+}
+
+.showContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.showBox{
+    width: 40vw;
+    margin-bottom: 2rem;
+    background-color: #07A0C3;
+    color: #FFFD82;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.showBox h2{
+    margin-bottom: 2rem;
+}
+
+.showAttendees{
+    background-color: #07A0C3;
+    color: #FFFD82;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.showAttendees h2{
+    margin-bottom: 2rem;
+}
+
+.attendEvent{
+    background-color: #07A0C3;
+    color: #FFFD82;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.attendEvent :hover{
+    background-color: white;
+}
+
+.attendBtn{
+    background-color: #07A0C3;
+    color: #FFFD82;
+    border-radius: 0.5rem;
+    padding: 1rem;
 }

@@ -1,14 +1,42 @@
 
-
+<h1 class="show">
 <%= @event.title %>
-<%= @event.body %>
-<%= @event.date %>
+</h1>
 
-<% if user_signed_in? %>
-<%= link_to "Update", enrollment_path, method: :put%>
-<% end %>
+<div class="showContainer">
+    <div class="showBox">
+        <h2>Event Description</h2>
+        <%= @event.body %>
 
-<% @event.attendees.each do |user| %>
-    <%=user.id %>
-    <br>
-<% end %>
+        <h2>Location</h2>
+        <%= @event.location %>
+
+        <h2>When</h2>
+        <%= @event.date %>
+    </div>
+
+    <div class="showAttendees">
+        <h2> List of attendees</h2>
+        <% @event.attendees.each do |user| %>
+            <%=user.username %>
+            <br>
+        <% end %>
+    </div>
+
+    
+        <% if user_signed_in? %>
+        <%= link_to "Attend the event", enrollment_path, method: :put, class: "attendBtn"%>
+        <% else %>
+        <div class="attendEvent">
+            To attend this event you must
+            <%= link_to "Sign in", new_user_session_path%>
+        </div>
+        <% end %>
+    
+    
+</div>
+
+
+
+
+
